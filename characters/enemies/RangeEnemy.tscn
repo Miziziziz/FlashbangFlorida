@@ -1,17 +1,24 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/characters/enemies/idle/Amelia_idle_16x16.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/enemies/run/Amelia_run_16x16.png" type="Texture" id=2]
 [ext_resource path="res://characters/enemies/EnemyGraphics.gd" type="Script" id=3]
 [ext_resource path="res://characters/CharacterMover.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/enemies/RangeEnemy.gd" type="Script" id=5]
+[ext_resource path="res://assets/environment/1_Generic_16x16.png" type="Texture" id=6]
 [ext_resource path="res://assets/environment/6_Music_and_sport_16x16.png" type="Texture" id=7]
 [ext_resource path="res://characters/enemies/GunBase.gd" type="Script" id=8]
+[ext_resource path="res://characters/AlertPopup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/AimTimer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/StunPopup.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.194444, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.377778, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.08276
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("IdleSprite:visible")
 tracks/0/interp = 1
@@ -49,7 +56,7 @@ tracks/2/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("IdleSprite:frame")
 tracks/0/interp = 1
@@ -87,7 +94,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("IdleSprite:frame")
 tracks/0/interp = 1
@@ -125,7 +132,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("IdleSprite:frame")
 tracks/0/interp = 1
@@ -163,7 +170,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -203,7 +210,7 @@ tracks/2/keys = {
 "values": [ 18, 19, 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -243,7 +250,7 @@ tracks/2/keys = {
 "values": [ 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -283,7 +290,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -327,9 +334,13 @@ tracks/2/keys = {
 z_index = 5
 collision_layer = 2
 script = ExtResource( 5 )
+react_jump_curve = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="AlertPopup" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10, -27 )
 
 [node name="Graphics" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -349,14 +360,14 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Graphics"]
 autoplay = "idle_down"
-anims/idle_down = SubResource( 3 )
-anims/idle_left = SubResource( 4 )
-anims/idle_right = SubResource( 5 )
-anims/idle_up = SubResource( 6 )
-anims/run_down = SubResource( 7 )
-anims/run_left = SubResource( 8 )
-anims/run_right = SubResource( 9 )
-anims/run_up = SubResource( 10 )
+anims/idle_down = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 5 )
+anims/run_down = SubResource( 6 )
+anims/run_left = SubResource( 7 )
+anims/run_right = SubResource( 8 )
+anims/run_up = SubResource( 9 )
 
 [node name="GunBase" type="Node2D" parent="Graphics"]
 script = ExtResource( 8 )
@@ -372,6 +383,13 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2( 144, 244, 15, 17 )
 
+[node name="MuzzleFlash" type="Sprite" parent="Graphics/GunBase/GunHoldLeft/Gun"]
+visible = false
+position = Vector2( -12, 12 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 44, 221, 8, 8 )
+
 [node name="GunHoldUp" type="Node2D" parent="Graphics/GunBase"]
 position = Vector2( 3, -10 )
 z_index = -1
@@ -383,6 +401,14 @@ texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 144, 244, 15, 17 )
 
+[node name="MuzzleFlash2" type="Sprite" parent="Graphics/GunBase/GunHoldUp/Gun"]
+visible = false
+position = Vector2( 12, 12 )
+rotation = 1.5708
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 44, 221, 8, 8 )
+
 [node name="GunHoldRight" type="Node2D" parent="Graphics/GunBase"]
 
 [node name="Gun" type="Sprite" parent="Graphics/GunBase/GunHoldRight"]
@@ -390,6 +416,13 @@ position = Vector2( 5, 1 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 144, 244, 15, 17 )
+
+[node name="MuzzleFlash3" type="Sprite" parent="Graphics/GunBase/GunHoldRight/Gun"]
+visible = false
+position = Vector2( 12, 12 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 44, 221, 8, 8 )
 
 [node name="GunHoldDown" type="Node2D" parent="Graphics/GunBase"]
 position = Vector2( -6, -2 )
@@ -400,4 +433,21 @@ texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 144, 244, 15, 17 )
 
+[node name="MuzzleFlash4" type="Sprite" parent="Graphics/GunBase/GunHoldDown/Gun"]
+visible = false
+position = Vector2( 12, 12 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 44, 221, 8, 8 )
+
+[node name="FlashTimer" type="Timer" parent="Graphics/GunBase"]
+wait_time = 0.05
+one_shot = true
+
 [node name="CharacterMover" parent="." instance=ExtResource( 4 )]
+
+[node name="AimTimer" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, -27 )
+
+[node name="StunPopup" parent="." instance=ExtResource( 11 )]
+position = Vector2( -11, -28 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/characters/enemies/idle/Amelia_idle_16x16.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/enemies/run/Amelia_run_16x16.png" type="Texture" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://assets/environment/12_Kitchen_16x16.png" type="Texture" id=6]
 [ext_resource path="res://assets/environment/6_Music_and_sport_16x16.png" type="Texture" id=7]
 [ext_resource path="res://characters/enemies/MeleeWeapons.gd" type="Script" id=8]
+[ext_resource path="res://characters/AlertPopup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/StunPopup.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.194444, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.377778, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.08276
@@ -334,9 +339,13 @@ radius = 9.0
 z_index = 5
 collision_layer = 2
 script = ExtResource( 5 )
+react_jump_curve = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="AlertPopup" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10, -27 )
 
 [node name="Graphics" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -385,6 +394,7 @@ region_enabled = true
 region_rect = Rect2( 193, 581, 11, 10 )
 
 [node name="CharacterMover" parent="." instance=ExtResource( 4 )]
+max_speed = 300
 
 [node name="KillZone" type="Area2D" parent="."]
 collision_layer = 0
@@ -392,3 +402,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource( 11 )
+
+[node name="StunPopup" parent="." instance=ExtResource( 10 )]
+position = Vector2( -12, -28 )

@@ -7,5 +7,7 @@ func ready_hook():
 	graphics.connect("direction_updated", $Graphics/MeleeWeapons, "update_dir")
 
 func kill_player_on_enter(body: PhysicsBody2D):
+	if cur_stun_time > 0:
+		return
 	if body.has_method("kill"):
 		body.kill()

@@ -4,11 +4,12 @@ class_name Enemy
 
 onready var character_mover = $CharacterMover
 onready var graphics = $Graphics
+onready var alert_popup = $AlertPopup
 
 var nav : Navigation2D
 var player : KinematicBody2D
 
-enum STATES {IDLE, PATROL, CHASE}
+enum STATES {IDLE, PATROL, REACT, CHASE}
 var cur_state = STATES.IDLE
 
 var patrol_points = []
@@ -16,6 +17,10 @@ var patrol_ind = 0
 
 var move_vec : Vector2
 export var vision_cone_size = 45 # degrees
+
+export(Curve) var react_jump_curve
+
+var cur_stun_time = 0.0
 
 func _ready():
 	graphics.update_animation(Vector2.DOWN.rotated(global_rotation))
@@ -41,11 +46,19 @@ func _process(delta):
 	graphics.update_animation(move_vec)
 	character_mover.set_move_vec(move_vec)
 	
+	if cur_stun_time > 0.0:
+		cur_stun_time -= delta
+		graphics.update_animation(Vector2.ZERO)
+		character_mover.set_move_vec(Vector2.ZERO)
+		return
+	
 	match cur_state:
 		STATES.IDLE:
 			process_idle_state(delta)
 		STATES.PATROL:
 			process_patrol_state(delta)
+		STATES.REACT:
+			process_react_state(delta)
 		STATES.CHASE:
 			process_chase_state(delta)
 
@@ -56,12 +69,24 @@ func set_patrol_state():
 	cur_state = STATES.PATROL
 	patrol_time = 0.0
 
+export var react_jump_height = 6.0
+export var react_time = .6
+var cur_react_time = 0.0
+var first_reaction = true
+func set_react_state():
+	cur_state = STATES.REACT
+	if !first_reaction:
+		set_chase_state()
+		return
+	alert_popup.alert()
+	first_reaction = false
+
 func set_chase_state():
 	cur_state = STATES.CHASE
 
 func process_idle_state(delta):
 	if can_see_player():
-		set_chase_state()
+		set_react_state()
 		return
 	move_vec = Vector2.ZERO
 	idle_state_hook()
@@ -76,7 +101,7 @@ var pause_time = 1.0
 #var turn_time = 1.0
 func process_patrol_state(delta):
 	if can_see_player():
-		set_chase_state()
+		set_react_state()
 		return
 	match cur_patrol_state:
 		PATROL_STATES.PAUSE:
@@ -95,6 +120,17 @@ func process_patrol_state(delta):
 				patrol_ind += 1
 				patrol_ind %= patrol_points.size()
 				cur_patrol_state = PATROL_STATES.PAUSE
+
+func process_react_state(delta):
+	cur_react_time += delta
+	if cur_react_time > react_time:
+		graphics.position.y = 0
+		set_chase_state()
+		return
+	
+	var t = cur_react_time / react_time
+	
+	graphics.position.y = -react_jump_height * react_jump_curve.interpolate(t)
 
 func process_chase_state(delta):
 	if player.dead:
@@ -135,7 +171,11 @@ func point_in_vision_cone(point: Vector2):
 
 func has_los_to_point(point: Vector2):
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(global_position, point, [self], 1)
+	var result = space_state.intersect_ray(global_position, point, [self], 1 + 4)
 	if result:
 		return false
 	return true
+
+func stun(stun_time: float):
+	cur_stun_time = stun_time
+	$StunPopup.display_stun(stun_time)
