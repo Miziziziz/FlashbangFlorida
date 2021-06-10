@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/Door.tscn" type="PackedScene" id=1]
+
+[node name="DoubleDoors" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource( 1 )]
+scale = Vector2( -1, 1 )
+
+[node name="Door2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, 0 )

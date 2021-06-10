@@ -1,13 +1,11 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://characters/enemies/RangeEnemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=7]
-[ext_resource path="res://environment/DoubleDoors.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -262,6 +260,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 0/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=36]
+vertices = PoolVector2Array( -8, 136, -8, 40, 24, 40, 24, 136, 72, 136, 72, 152, -136, 152, -184, 136, -184, 280, -136, 280 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 0, 3, 6 ), PoolIntArray( 7, 0, 6 ), PoolIntArray( 8, 7, 6, 9 ) ]
+outlines = [ PoolVector2Array( -8, 40, 24, 40, 24, 136, 72, 136, 72, 152, -136, 152, -136, 280, -184, 280, -184, 136, -8, 136 ) ]
 
 [node name="World" type="Node2D"]
 
@@ -269,13 +270,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
+tile_data = PoolIntArray( 196607, 0, 196609, 131072, 0, 3, 131073, 0, 0, 262143, 0, 1, 196608, 0, 65538, 196609, 0, 131075, 327679, 0, 1, 262144, 0, 65538, 262145, 0, 131075, 393215, 0, 1, 327680, 0, 65538, 327681, 0, 131075, 458751, 0, 1, 393216, 0, 65538, 393217, 0, 131075, 524287, 0, 1, 458752, 0, 65538, 458753, 0, 131075, 589812, 0, 196609, 589813, 0, 3, 589814, 0, 3, 589815, 0, 3, 589816, 0, 3, 589817, 0, 3, 589818, 0, 3, 589819, 0, 3, 589820, 0, 3, 589821, 0, 3, 589822, 0, 3, 589823, 0, 65537, 524288, 0, 65538, 524289, 0, 2, 524290, 0, 3, 524291, 0, 3, 524292, 0, 0, 655348, 0, 1, 655349, 0, 65538, 655350, 0, 65538, 655351, 0, 65539, 655352, 0, 131073, 655353, 0, 131073, 655354, 0, 131073, 655355, 0, 131073, 655356, 0, 131073, 655357, 0, 131073, 655358, 0, 131073, 655359, 0, 131073, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 196611, 720884, 0, 1, 720885, 0, 65538, 720886, 0, 65538, 720887, 0, 131075, 786420, 0, 1, 786421, 0, 65538, 786422, 0, 65538, 786423, 0, 131075, 851956, 0, 1, 851957, 0, 65538, 851958, 0, 65538, 851959, 0, 131075, 917492, 0, 1, 917493, 0, 65538, 917494, 0, 65538, 917495, 0, 131075, 983028, 0, 1, 983029, 0, 65538, 983030, 0, 65538, 983031, 0, 131075, 1048564, 0, 1, 1048565, 0, 65538, 1048566, 0, 65538, 1048567, 0, 131075, 1114100, 0, 1, 1114101, 0, 65538, 1114102, 0, 65538, 1114103, 0, 131075, 1179636, 0, 131072, 1179637, 0, 131073, 1179638, 0, 131073, 1179639, 0, 196611 )
 
 [node name="TileMapWalls" type="TileMap" parent="."]
 tile_set = SubResource( 35 )
 cell_size = Vector2( 16, 32 )
 format = 1
+tile_data = PoolIntArray( 65534, 0, 1, 65535, 0, 196610, 0, 0, 196610, 1, 0, 196610, 2, 0, 3, 131070, 0, 65536, 65538, 0, 65536, 196606, 0, 65536, 131074, 0, 65536, 262131, 0, 1, 262132, 0, 196610, 262133, 0, 196610, 262134, 0, 196610, 262135, 0, 196610, 262136, 0, 196610, 262137, 0, 196610, 262138, 0, 196610, 262139, 0, 196610, 262140, 0, 196610, 262141, 0, 196610, 262142, 0, 131075, 196610, 0, 131073, 196611, 0, 196610, 196612, 0, 196610, 196613, 0, 3, 327667, 0, 65536, 262149, 0, 65536, 393203, 0, 65536, 393208, 0, 1, 393209, 0, 196610, 393210, 0, 196610, 393211, 0, 196610, 393212, 0, 196610, 393213, 0, 196610, 393214, 0, 196610, 393215, 0, 196610, 327680, 0, 196610, 327681, 0, 196610, 327682, 0, 196610, 327683, 0, 196610, 327684, 0, 196610, 327685, 0, 131075, 458739, 0, 65536, 458744, 0, 65536, 524275, 0, 65536, 524280, 0, 65536, 589811, 0, 65536, 589816, 0, 65536, 655347, 0, 131073, 655348, 0, 196610, 655349, 0, 196610, 655350, 0, 196610, 655351, 0, 196610, 655352, 0, 131075 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 7 )]
+position = Vector2( 16, 48 )
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "navigation",
@@ -287,14 +291,20 @@ navpoly = SubResource( 36 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -160, 264 )
 
-[node name="RangeEnemy" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 42, 0 )
+[node name="MeleeEnemy" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 0, 128 )
 
-[node name="MeleeEnemy" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 93, 0 )
+[node name="MeleeEnemy2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 24, 128 )
 
-[node name="DoubleDoors" parent="YSort" instance=ExtResource( 8 )]
+[node name="TutorialDialog" parent="." instance=ExtResource( 6 )]
+position = Vector2( -80, 336 )
 
-[node name="Door" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -41, 0 )
+[node name="Label" parent="TutorialDialog" index="1"]
+margin_left = -289.5
+margin_right = 289.5
+text = "You can walk through stunned enemies"
+
+[editable path="TutorialDialog"]

@@ -53,6 +53,7 @@ func kill():
 	dead = true
 	$Graphics/AnimationPlayer.play("death")
 	character_mover.set_move_vec(Vector2.ZERO)
+	$CanvasLayer/RestartMessage.show()
 
 func throw_flashbang():
 	if cur_flashbang_cooldown_time > 0.0:
@@ -76,7 +77,7 @@ func throw_flashbang():
 	get_tree().get_root().add_child(flashbang_inst)
 	flashbang_inst.throw(global_position, throw_dir)
 
-func stun(stun_time: float):
+func stun(stun_time: float, _thrown_from_pos: Vector2):
 	if dead:
 		return
 	cur_stun_time = stun_time

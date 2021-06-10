@@ -7,6 +7,7 @@ var throw_time = 1.0
 var cur_throw_time = 0.0
 var spin_speed = 2000
 var stun_time = 2.0
+var start_pos : Vector2
 
 func _ready():
 	if thrown:
@@ -14,7 +15,8 @@ func _ready():
 	hide()
 	set_physics_process(false)
 
-func throw(start_pos: Vector2, dir: Vector2):
+func throw(_start_pos: Vector2, dir: Vector2):
+	start_pos = _start_pos
 	show()
 	thrown = true
 	cur_throw_time = 0.0
@@ -64,6 +66,6 @@ func flash():
 		if r_result:
 			pass
 		else:
-			obj.stun(stun_time)
+			obj.stun(stun_time, start_pos)
 	
 	

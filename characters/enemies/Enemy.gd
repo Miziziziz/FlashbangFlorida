@@ -9,14 +9,15 @@ onready var alert_popup = $AlertPopup
 var nav : Navigation2D
 var player : KinematicBody2D
 
-enum STATES {IDLE, PATROL, REACT, CHASE}
+enum STATES {IDLE, PATROL, REACT, INVESTIGATE, CHASE}
 var cur_state = STATES.IDLE
+var start_state = STATES.IDLE
 
 var patrol_points = []
 var patrol_ind = 0
 
 var move_vec : Vector2
-export var vision_cone_size = 45 # degrees
+export var vision_cone_size = 75 # degrees
 
 export(Curve) var react_jump_curve
 
@@ -35,6 +36,7 @@ func _ready():
 		for c in get_node("PatrolPoints").get_children():
 			patrol_points.append(c.global_position)
 		set_patrol_state()
+		start_state = STATES.PATROL
 	else:
 		set_idle_state()
 	ready_hook()
@@ -57,6 +59,8 @@ func _process(delta):
 			process_idle_state(delta)
 		STATES.PATROL:
 			process_patrol_state(delta)
+		STATES.INVESTIGATE:
+			process_investigate_state(delta)
 		STATES.REACT:
 			process_react_state(delta)
 		STATES.CHASE:
@@ -80,6 +84,15 @@ func set_react_state():
 		return
 	alert_popup.alert()
 	first_reaction = false
+
+var pos_to_investigate : Vector2
+var investigate_start_pos : Vector2
+var investigating = false
+func set_investigate_state(pos: Vector2):
+	cur_state = STATES.INVESTIGATE
+	pos_to_investigate = pos
+	investigate_start_pos = global_position
+	investigating = true
 
 func set_chase_state():
 	cur_state = STATES.CHASE
@@ -120,6 +133,23 @@ func process_patrol_state(delta):
 				patrol_ind += 1
 				patrol_ind %= patrol_points.size()
 				cur_patrol_state = PATROL_STATES.PAUSE
+
+func process_investigate_state(delta):
+	if can_see_player():
+		set_react_state()
+		return
+	var path = nav.get_simple_path(global_position, pos_to_investigate)
+	if path.size() > 1:
+		move_vec = path[1] - global_position
+	if global_position.distance_squared_to(pos_to_investigate) < 100:
+		if investigating:
+			investigating = false
+			pos_to_investigate = investigate_start_pos
+		else:
+			if start_state == STATES.PATROL:
+				set_patrol_state()
+			else:
+				set_idle_state()
 
 func process_react_state(delta):
 	cur_react_time += delta
@@ -176,6 +206,7 @@ func has_los_to_point(point: Vector2):
 		return false
 	return true
 
-func stun(stun_time: float):
+func stun(stun_time: float, thrown_from_pos: Vector2):
 	cur_stun_time = stun_time
 	$StunPopup.display_stun(stun_time)
+	set_investigate_state(thrown_from_pos)

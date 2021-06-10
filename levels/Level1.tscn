@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://environment/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -260,9 +261,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 0/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=36]
-vertices = PoolVector2Array( 520.292, 83.7704, 522.385, -84.903, 548.873, -84.0621, 552.04, 85.7546, 539.341, 86.5483, 534.579, 87.342, 541.026, 133.915, 534.67, 133.915, 518.397, 423.926, 517.5, 502.5, 493.3, 503.898, 489.554, 425.424, 503.039, 423.177, 506.41, 423.177, 502.477, 372.422, 507.721, 372.984, 389, 373, 384, 144, 640, 144, 633, 373 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 0, 4 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 8, 9, 10, 11, 12, 13 ), PoolIntArray( 13, 12, 14, 15 ), PoolIntArray( 14, 16, 17, 7 ), PoolIntArray( 18, 19, 15, 14, 7, 6 ) ]
-outlines = [ PoolVector2Array( 389, 373, 502.477, 372.422, 503.039, 423.177, 489.554, 425.424, 493.3, 503.898, 517.5, 502.5, 518.397, 423.926, 506.41, 423.177, 507.721, 372.984, 633, 373, 640, 144, 541.026, 133.915, 539.341, 86.5483, 552.04, 85.7546, 548.873, -84.0621, 522.385, -84.903, 520.292, 83.7704, 534.579, 87.342, 534.67, 133.915, 384, 144 ) ]
+vertices = PoolVector2Array( 518.397, 423.926, 517.5, 502.5, 493.3, 503.898, 489.554, 425.424, 503.039, 423.177, 506.41, 423.177, 502.477, 372.422, 507.721, 372.984, 520.292, 83.7704, 522.385, -48, 548.873, -48, 552.04, 85.7546, 539.341, 86.5483, 534.579, 87.342, 541.026, 133.915, 534.67, 133.915, 389, 373, 384, 144, 640, 144, 633, 373 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 8, 9, 10, 11, 12 ), PoolIntArray( 13, 8, 12 ), PoolIntArray( 13, 12, 14, 15 ), PoolIntArray( 6, 16, 17, 15 ), PoolIntArray( 18, 19, 7, 6, 15, 14 ) ]
+outlines = [ PoolVector2Array( 389, 373, 502.477, 372.422, 503.039, 423.177, 489.554, 425.424, 493.3, 503.898, 517.5, 502.5, 518.397, 423.926, 506.41, 423.177, 507.721, 372.984, 633, 373, 640, 144, 541.026, 133.915, 539.341, 86.5483, 552.04, 85.7546, 548.873, -48, 522.385, -48, 520.292, 83.7704, 534.579, 87.342, 534.67, 133.915, 384, 144 ) ]
 
 [node name="World" type="Node2D"]
 
@@ -321,3 +322,6 @@ position = Vector2( 504, 416 )
 
 [node name="Door2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 536, 128 )
+
+[node name="TutorialDialog" parent="." instance=ExtResource( 7 )]
+position = Vector2( 328, 472 )
