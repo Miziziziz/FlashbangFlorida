@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://assets/characters/Adam_idle_16x16.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Adam_run_16x16.png" type="Texture" id=2]
@@ -8,6 +8,14 @@
 [ext_resource path="res://characters/AimTimer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/StunPopup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/MateSC-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://utility/PlayRandomSound.gd" type="Script" id=9]
+[ext_resource path="res://sfx/steps/footstep01.wav" type="AudioStream" id=10]
+[ext_resource path="res://sfx/steps/footstep02.wav" type="AudioStream" id=11]
+[ext_resource path="res://sfx/deafen.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/steps/footstep04.wav" type="AudioStream" id=13]
+[ext_resource path="res://sfx/steps/footstep00.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/gunshot/click2.wav" type="AudioStream" id=15]
+[ext_resource path="res://sfx/hit/Melee_Deep_Wound_05.wav" type="AudioStream" id=16]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.0
@@ -42,87 +50,87 @@ region = Rect2( 272, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 288, 0, 16, 32 )
+region = Rect2( 96, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 304, 0, 16, 32 )
+region = Rect2( 112, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 320, 0, 16, 32 )
+region = Rect2( 128, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 336, 0, 16, 32 )
+region = Rect2( 144, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 352, 0, 16, 32 )
+region = Rect2( 160, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 368, 0, 16, 32 )
+region = Rect2( 176, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 16, 32 )
+region = Rect2( 288, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 112, 0, 16, 32 )
+region = Rect2( 304, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 16, 32 )
+region = Rect2( 320, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
-region = Rect2( 144, 0, 16, 32 )
+region = Rect2( 336, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 2 )
-region = Rect2( 160, 0, 16, 32 )
+region = Rect2( 352, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 2 )
-region = Rect2( 176, 0, 16, 32 )
+region = Rect2( 368, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 32 )
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 32 )
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 32 )
+region = Rect2( 0, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 16, 32 )
+region = Rect2( 16, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 2 )
-region = Rect2( 80, 0, 16, 32 )
+region = Rect2( 32, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 48, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 80, 0, 16, 32 )
 
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
@@ -138,32 +146,32 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "run_down",
+"name": "run_up",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
-"name": "run_up",
+"name": "run_down",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
-"name": "run_right",
+"name": "idle_left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 27 ) ],
-"loop": true,
-"name": "idle_down",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 28 ) ],
+"frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "idle_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 29 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
-"name": "idle_left",
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "run_right",
 "speed": 5.0
 } ]
 
@@ -394,3 +402,39 @@ text = "Press 'R' to restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="StepSounds" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StepSounds"]
+stream = ExtResource( 14 )
+volume_db = -18.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="StepSounds"]
+stream = ExtResource( 10 )
+volume_db = -18.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="StepSounds"]
+stream = ExtResource( 11 )
+volume_db = -18.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="StepSounds"]
+stream = ExtResource( 13 )
+volume_db = -18.0
+bus = "sfx"
+
+[node name="DeafenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -19.184
+bus = "sfx"
+
+[node name="FlashbangLoadedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+bus = "sfx"
+
+[node name="KillSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "sfx"

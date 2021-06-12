@@ -7,6 +7,7 @@ func ready_hook():
 	graphics.connect("direction_updated", $Graphics/GunBase, "update_dir")
 	$Graphics/GunBase.update_dir(graphics.last_dir)
 
+var played_click_sound = false
 var aim_time = 0.4
 var cur_aim_time = 0.0
 func process_chase_state(delta):
@@ -16,10 +17,14 @@ func process_chase_state(delta):
 		return
 	
 	if has_los_to_point(player.global_position):
+		if !played_click_sound:
+			$GunClickSound.play()
+			played_click_sound = true
 		cur_aim_time += delta
 		aim_timer_display.aim_time_percent_complete = clamp(cur_aim_time / aim_time, 0.0, 1.0)
 		if cur_aim_time >= aim_time:
 			player.kill()
+			$GunshotSound.play()
 			gun_base.flash()
 			aim_timer_display.aim_time_percent_complete = -1.0
 		var dir_to_player = player.global_position - global_position
@@ -27,6 +32,7 @@ func process_chase_state(delta):
 		graphics.update_animation(Vector2.ZERO)
 		gun_base.set_angle(atan2(dir_to_player.y, dir_to_player.x))
 	else:
+		played_click_sound = false
 		aim_timer_display.aim_time_percent_complete = -1.0
 		gun_base.reset_angle()
 		cur_aim_time = 0.0

@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://singletons/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://sfx/stairs_quick.wav" type="AudioStream" id=2]
+[ext_resource path="res://sfx/beep-03.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/glass_shatter.wav" type="AudioStream" id=4]
+[ext_resource path="res://music/Spookyloop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://music/Of Far Different Nature - Mystic Quest Dubstep (CC-BY).ogg" type="AudioStream" id=6]
+[ext_resource path="res://music/Of Far Different Nature - Departing At Dawn (CC-BY).ogg" type="AudioStream" id=7]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource( 1 )
+
+[node name="StairsSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "sfx"
+
+[node name="BeepSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 8.0
+bus = "sfx"
+
+[node name="GlassShatterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "sfx"
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+bus = "Music"
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+bus = "Music"
+
+[node name="OutroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+bus = "Music"

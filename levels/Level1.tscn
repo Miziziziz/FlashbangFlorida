@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://utility/PlayMusicTrack.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -325,3 +326,5 @@ position = Vector2( 536, 128 )
 
 [node name="TutorialDialog" parent="." instance=ExtResource( 7 )]
 position = Vector2( 328, 472 )
+
+[node name="PlayMusicTrack" parent="." instance=ExtResource( 8 )]

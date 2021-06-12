@@ -19,3 +19,4 @@ func open():
 	$SpriteOpen.show()
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	$LightOccluder2D.hide()
+	$OpenSounds.play()

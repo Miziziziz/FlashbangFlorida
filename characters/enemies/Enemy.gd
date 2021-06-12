@@ -23,8 +23,13 @@ export(Curve) var react_jump_curve
 
 var cur_stun_time = 0.0
 
+var start_dir : Vector2
+
 func _ready():
-	graphics.update_animation(Vector2.DOWN.rotated(global_rotation))
+	graphics.get_node("RunSprite").connect("frame_changed", self, "run_frame_changed")
+	
+	start_dir = Vector2.DOWN.rotated(global_rotation)
+	graphics.update_animation(start_dir)
 	graphics.update_animation(Vector2.ZERO)
 	global_rotation = 0
 	
@@ -82,6 +87,7 @@ func set_react_state():
 	if !first_reaction:
 		set_chase_state()
 		return
+	$AlertSounds.play()
 	alert_popup.alert()
 	first_reaction = false
 
@@ -146,9 +152,13 @@ func process_investigate_state(delta):
 			investigating = false
 			pos_to_investigate = investigate_start_pos
 		else:
+			
 			if start_state == STATES.PATROL:
 				set_patrol_state()
 			else:
+				graphics.update_animation(start_dir)
+				character_mover.velo = Vector2.ZERO
+				move_vec = Vector2.ZERO
 				set_idle_state()
 
 func process_react_state(delta):
@@ -210,3 +220,8 @@ func stun(stun_time: float, thrown_from_pos: Vector2):
 	cur_stun_time = stun_time
 	$StunPopup.display_stun(stun_time)
 	set_investigate_state(thrown_from_pos)
+	$AlertSounds.stop()
+
+func run_frame_changed():
+	if graphics.get_node("RunSprite").frame % 2 == 0: # or anim_sprite.frame == 4:
+		$StepSounds.play()

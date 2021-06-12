@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sfx/alert/Crossbowman_Kill_001.wav" type="AudioStream" id=1]
+[ext_resource path="res://sfx/alert/jump3.wav" type="AudioStream" id=2]
+[ext_resource path="res://sfx/alert/Guard_Kill_001.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/alert/Crossbowman_See_001.wav" type="AudioStream" id=4]
+[ext_resource path="res://sfx/alert/Guard_See_002.wav" type="AudioStream" id=5]
+[ext_resource path="res://sfx/alert/jump2.wav" type="AudioStream" id=6]
+[ext_resource path="res://sfx/alert/hold_f.wav" type="AudioStream" id=7]
+[ext_resource path="res://sfx/alert/Paladin_Kill_001.wav" type="AudioStream" id=8]
+[ext_resource path="res://utility/PlayRandomSound.gd" type="Script" id=9]
+
+[node name="AlertSounds" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+bus = "sfx"
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = -5.0
+bus = "sfx"

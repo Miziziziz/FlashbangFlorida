@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beep-03.wav-bb7b34d845eb5aa0ce34252629f2a85c.sample"
+
+[deps]
+
+source_file="res://sfx/beep-03.wav"
+dest_files=[ "res://.import/beep-03.wav-bb7b34d845eb5aa0ce34252629f2a85c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

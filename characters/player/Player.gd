@@ -15,9 +15,11 @@ var dead = false
 var cur_stun_time = 0.0
 
 var flashbang_obj = preload("res://characters/player/Flashbang.tscn")
+var flashbang_loaded = true
 
 func _ready():
 	character_mover.set_body_to_move(self)
+	anim_sprite.connect("frame_changed", self, "run_frame_changed")
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -35,9 +37,13 @@ func _process(delta):
 		throw_flashbang()
 	
 	if cur_flashbang_cooldown_time > 0.0:
+		flashbang_loaded = false
 		cur_flashbang_cooldown_time -= delta
 		flashbang_cooldown_display.set_percent(1.0 - cur_flashbang_cooldown_time / flashbang_cooldown_time)
 	else:
+		if !flashbang_loaded:
+			$FlashbangLoadedSound.play()
+		flashbang_loaded = true
 		flashbang_cooldown_display.set_percent(-1.0)
 	
 	var move_vec : Vector2
@@ -54,6 +60,7 @@ func kill():
 	$Graphics/AnimationPlayer.play("death")
 	character_mover.set_move_vec(Vector2.ZERO)
 	$CanvasLayer/RestartMessage.show()
+	$KillSound.play()
 
 func throw_flashbang():
 	if cur_flashbang_cooldown_time > 0.0:
@@ -84,4 +91,8 @@ func stun(stun_time: float, _thrown_from_pos: Vector2):
 	character_mover.set_move_vec(Vector2.ZERO)
 	anim_sprite.update_animation(Vector2.ZERO)
 	$StunPopup.display_stun(stun_time)
+	$DeafenSound.play()
 	
+func run_frame_changed():
+	if anim_sprite.frame == 1: # or anim_sprite.frame == 4:
+		$StepSounds.play()

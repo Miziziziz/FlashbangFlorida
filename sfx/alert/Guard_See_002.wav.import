@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Guard_See_002.wav-573fa9da765b07348bbd73a532ce03f2.sample"
+
+[deps]
+
+source_file="res://sfx/alert/Guard_See_002.wav"
+dest_files=[ "res://.import/Guard_See_002.wav-573fa9da765b07348bbd73a532ce03f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

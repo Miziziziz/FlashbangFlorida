@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bang_07.wav-625856bccfaa200a58c9208585039737.sample"
+
+[deps]
+
+source_file="res://sfx/bang_07.wav"
+dest_files=[ "res://.import/bang_07.wav-625856bccfaa200a58c9208585039737.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

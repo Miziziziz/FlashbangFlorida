@@ -1,20 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/PressEnterToContinue.gd" type="Script" id=1]
 [ext_resource path="res://ui/MateSC-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sfx/computerNoise_000.wav" type="AudioStream" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.137255, 0.152941, 0.278431, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.137255, 0.152941, 0.278431, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -30,12 +31,11 @@ border_width_top = 2
 border_width_right = 1
 border_width_bottom = 1
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "text_scroll"
+[sub_resource type="Animation" id=7]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:percent_visible")
@@ -74,18 +74,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -196.0
-margin_right = 387.0
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 2 )
+margin_left = -368.0
+margin_top = -252.0
+margin_right = 368.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
 text = "Hey Pacifist Pete, 
 Bad Guy Bill has kidnapped your GF (Ghost Friend)!
 
-I've sent you a shipment of flashbang grenades.
+I've sent some  some flashbang grenades i got  on sale at the flea market.
+
 It's time to get violent, but not too violent. 
 
 "
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,14 +98,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -80.0
-margin_top = 60.0
+margin_top = 116.0
 margin_right = 8.0
-margin_bottom = 103.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
+margin_bottom = 159.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Start"
 script = ExtResource( 1 )
 __meta__ = {
@@ -112,4 +114,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "text_scroll"
-anims/text_scroll = SubResource( 1 )
+anims/text_scroll = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true

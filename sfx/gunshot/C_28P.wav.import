@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C_28P.wav-622245e23bba89eaf477fb9594dc4c85.sample"
+
+[deps]
+
+source_file="res://sfx/gunshot/C_28P.wav"
+dest_files=[ "res://.import/C_28P.wav-622245e23bba89eaf477fb9594dc4c85.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

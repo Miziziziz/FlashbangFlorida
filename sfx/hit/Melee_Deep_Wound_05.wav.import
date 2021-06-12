@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Melee_Deep_Wound_05.wav-e703d462a7366bc3294e4f93945185f3.sample"
+
+[deps]
+
+source_file="res://sfx/hit/Melee_Deep_Wound_05.wav"
+dest_files=[ "res://.import/Melee_Deep_Wound_05.wav-e703d462a7366bc3294e4f93945185f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

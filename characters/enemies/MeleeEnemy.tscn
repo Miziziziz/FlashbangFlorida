@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/characters/enemies/idle/Amelia_idle_16x16.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/enemies/run/Amelia_run_16x16.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://characters/enemies/MeleeWeapons.gd" type="Script" id=8]
 [ext_resource path="res://characters/AlertPopup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://characters/StunPopup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/AlertSounds.tscn" type="PackedScene" id=11]
+[ext_resource path="res://characters/StepSounds.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.194444, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.377778, 0 ), 0.0, 0.0, 0, 0 ]
@@ -404,3 +406,7 @@ shape = SubResource( 12 )
 
 [node name="StunPopup" parent="." instance=ExtResource( 10 )]
 position = Vector2( -12, -28 )
+
+[node name="AlertSounds" parent="." instance=ExtResource( 11 )]
+
+[node name="StepSounds" parent="." instance=ExtResource( 12 )]
