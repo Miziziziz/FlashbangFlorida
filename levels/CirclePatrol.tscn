@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/environment/12_Kitchen_16x16.png" type="Texture" id=7]
+[ext_resource path="res://assets/environment/1_Generic_16x16.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -339,3 +341,65 @@ position = Vector2( 40, 480 )
 
 [node name="Door3" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 88, 416 )
+
+[node name="Misc" type="Node2D" parent="."]
+
+[node name="Cabinets" type="Sprite" parent="Misc"]
+position = Vector2( -32, 162 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 46.7032, 9.9006 )
+
+[node name="CounterTop" type="Sprite" parent="Misc"]
+position = Vector2( -32, 152 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 102, 47, 10 )
+
+[node name="Sink" type="Sprite" parent="Misc"]
+position = Vector2( -22, 150 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 133, 113, 24, 14 )
+
+[node name="Utensils" type="Sprite" parent="Misc"]
+position = Vector2( -46, 142 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 32, 266, 16, 10 )
+
+[node name="Stove" type="Sprite" parent="Misc"]
+position = Vector2( 72, 322.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 128, 178, 16, 25 )
+
+[node name="Stove2" type="Sprite" parent="Misc"]
+position = Vector2( 88, 322.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 128, 178, 16, 25 )
+
+[node name="Knives" type="Sprite" parent="Misc"]
+position = Vector2( 80, 302 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 278, 33, 16 )
+
+[node name="Refridgerators" type="Sprite" parent="Misc"]
+position = Vector2( 48, 318 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 144, 375, 32, 35 )
+
+[node name="Rug" type="Sprite" parent="Misc"]
+position = Vector2( 58, 360 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 65, 484, 31, 24 )
+
+[node name="Window" type="Sprite" parent="Misc"]
+position = Vector2( 78, 244 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=7]
 [ext_resource path="res://utility/PlayMusicTrack.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/environment/1_Generic_16x16.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -282,6 +283,87 @@ tile_data = PoolIntArray( -196577, 0, 1, -196576, 0, 196610, -196575, 0, 196610,
 
 [node name="LevelExit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 544, -64 )
+
+[node name="Misc" type="Node2D" parent="."]
+
+[node name="RedRug" type="Sprite" parent="Misc"]
+position = Vector2( 396, 281 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 49, 356, 30, 24 )
+
+[node name="GreenRug" type="Sprite" parent="Misc"]
+position = Vector2( 617, 204 )
+rotation = 1.5708
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 97, 388, 30, 24 )
+
+[node name="Basket" type="Sprite" parent="Misc"]
+position = Vector2( 633, 127.5 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 113, 49, 14, 13 )
+
+[node name="Basket2" type="Sprite" parent="Misc"]
+position = Vector2( 618, 127.5 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 113, 49, 14, 13 )
+
+[node name="Sign" type="Sprite" parent="Misc"]
+position = Vector2( 552, 116 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 146, 44, 12, 9 )
+
+[node name="Stool" type="Sprite" parent="Misc"]
+position = Vector2( 394, 291 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Stool2" type="Sprite" parent="Misc"]
+position = Vector2( 379, 261 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Table" type="Sprite" parent="Misc"]
+position = Vector2( 403, 263 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 221, 529, 22, 21 )
+
+[node name="Window" type="Sprite" parent="Misc"]
+position = Vector2( 450, 115 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Buttons" type="Sprite" parent="Misc"]
+position = Vector2( 489, 403 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 117, 512, 6, 9 )
+
+[node name="Hangers" type="Sprite" parent="Misc"]
+position = Vector2( 510, 116 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 0, 779, 15, 15 )
+
+[node name="Tools" type="Sprite" parent="Misc"]
+position = Vector2( 639, 150 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 33, 876, 29, 21 )
+
+[node name="Plant" type="Sprite" parent="Misc"]
+position = Vector2( 646, 291 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 214, 456, 20, 33 )
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "navigation",

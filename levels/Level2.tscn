@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://characters/enemies/RangeEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/environment/1_Generic_16x16.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "concrete_floor.png 0"
@@ -280,6 +281,40 @@ format = 1
 tile_data = PoolIntArray( -65539, 0, 1, -65538, 0, 196610, -65537, 0, 196610, -131072, 0, 196610, -131071, 0, 3, -3, 0, 65536, -65535, 0, 65536, 65533, 0, 65536, 1, 0, 65536, 131069, 0, 65536, 65537, 0, 65536, 196601, 0, 1, 196602, 0, 196610, 196603, 0, 196610, 196604, 0, 196610, 196605, 0, 131074, 196606, 0, 196611, 131072, 0, 196609, 131073, 0, 65539, 262137, 0, 65536, 196609, 0, 65536, 327673, 0, 65536, 262145, 0, 65536, 393209, 0, 65536, 327681, 0, 65536, 458745, 0, 65536, 393217, 0, 65536, 524281, 0, 65536, 458753, 0, 65536, 589817, 0, 65536, 524289, 0, 65536, 655353, 0, 65536, 589825, 0, 65536, 720889, 0, 65536, 655361, 0, 65536, 786425, 0, 65536, 720897, 0, 65536, 851961, 0, 131073, 851962, 0, 196610, 851963, 0, 196610, 851964, 0, 2, 851965, 0, 196611, 786432, 0, 196609, 786433, 0, 65539, 917500, 0, 65536, 851969, 0, 65536, 983036, 0, 65536, 917505, 0, 65536, 1048572, 0, 65536, 983041, 0, 65536, 1114108, 0, 131073, 1114109, 0, 196610, 1114110, 0, 196610, 1114111, 0, 196610, 1048576, 0, 196610, 1048577, 0, 131075 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -22 )
+
+[node name="Misc" type="Node2D" parent="."]
+
+[node name="GreenRug" type="Sprite" parent="Misc"]
+position = Vector2( -80, 216 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 97, 388, 30, 24 )
+
+[node name="Stool" type="Sprite" parent="Misc"]
+position = Vector2( -88, 218 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Window" type="Sprite" parent="Misc"]
+position = Vector2( -74, 83 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Window2" type="Sprite" parent="Misc"]
+position = Vector2( -22, -44 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 132, 696, 11, 18 )
+
+[node name="Buttons" type="Sprite" parent="Misc"]
+position = Vector2( -26, 85 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 133, 512, 7, 8 )
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "navigation",

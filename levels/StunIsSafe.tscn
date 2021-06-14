@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/environment/walls.png" type="Texture" id=1]
 [ext_resource path="res://assets/environment/concrete_floor.png" type="Texture" id=2]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/enemies/MeleeEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/environment/1_Generic_16x16.png" type="Texture" id=5]
 [ext_resource path="res://ui/TutorialDialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/LevelExit.tscn" type="PackedScene" id=7]
 
@@ -280,6 +281,57 @@ tile_data = PoolIntArray( 65534, 0, 1, 65535, 0, 196610, 0, 0, 196610, 1, 0, 196
 
 [node name="LevelExit" parent="." instance=ExtResource( 7 )]
 position = Vector2( 16, 48 )
+
+[node name="Misc" type="Node2D" parent="."]
+
+[node name="RedRug" type="Sprite" parent="Misc"]
+position = Vector2( -160, 200 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 49, 356, 30, 24 )
+
+[node name="GreenRug" type="Sprite" parent="Misc"]
+position = Vector2( 48, 144 )
+rotation = 3.14159
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 97, 388, 30, 24 )
+
+[node name="Sign" type="Sprite" parent="Misc"]
+position = Vector2( -24, 116 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 146, 44, 12, 9 )
+
+[node name="Stool" type="Sprite" parent="Misc"]
+position = Vector2( 48, 136 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Window" type="Sprite" parent="Misc"]
+position = Vector2( -72, 115 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Window2" type="Sprite" parent="Misc"]
+position = Vector2( -152, 115 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Hangers" type="Sprite" parent="Misc"]
+position = Vector2( -8, 16 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 779, 15, 15 )
+
+[node name="Plant" type="Sprite" parent="Misc"]
+position = Vector2( 72, 120 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 214, 456, 20, 33 )
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "navigation",

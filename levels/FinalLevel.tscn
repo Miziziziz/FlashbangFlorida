@@ -327,6 +327,138 @@ cell_size = Vector2( 16, 32 )
 format = 1
 tile_data = PoolIntArray( 393197, 0, 1, 393198, 0, 196610, 393199, 0, 196610, 393200, 0, 196610, 393201, 0, 196610, 393202, 0, 196610, 393203, 0, 196610, 393204, 0, 2, 393205, 0, 196610, 393206, 0, 196610, 393207, 0, 196610, 393208, 0, 196610, 393209, 0, 196610, 393210, 0, 196610, 393211, 0, 196610, 393212, 0, 196610, 393213, 0, 196610, 393214, 0, 196610, 393215, 0, 196610, 327680, 0, 196610, 327681, 0, 2, 327682, 0, 196610, 327683, 0, 196610, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 196610, 327687, 0, 196610, 327688, 0, 196610, 327689, 0, 196610, 327690, 0, 196610, 327691, 0, 196610, 327692, 0, 196610, 327693, 0, 196610, 327694, 0, 2, 327695, 0, 196610, 327696, 0, 196610, 327697, 0, 196610, 327698, 0, 196610, 327699, 0, 196610, 327700, 0, 196610, 327701, 0, 196610, 327702, 0, 196610, 327703, 0, 196610, 327704, 0, 196610, 327705, 0, 3, 458733, 0, 65536, 458740, 0, 65536, 393217, 0, 65536, 393230, 0, 65536, 393241, 0, 65536, 524269, 0, 65536, 524274, 0, 0, 524276, 0, 131072, 458753, 0, 65536, 458766, 0, 65536, 458777, 0, 65536, 589805, 0, 65536, 589810, 0, 65536, 524289, 0, 65536, 524302, 0, 65536, 524313, 0, 65536, 655341, 0, 65536, 655346, 0, 65536, 589825, 0, 65536, 589838, 0, 65536, 589849, 0, 65536, 720877, 0, 65536, 720882, 0, 65536, 655361, 0, 65536, 655374, 0, 65536, 655385, 0, 65536, 786413, 0, 65536, 786418, 0, 131073, 786419, 0, 196610, 786420, 0, 196610, 786421, 0, 196610, 786422, 0, 196610, 786423, 0, 196610, 786424, 0, 196610, 786425, 0, 196610, 786426, 0, 196610, 786427, 0, 196610, 786428, 0, 196610, 786429, 0, 196610, 786430, 0, 196610, 786431, 0, 196610, 720896, 0, 196610, 720897, 0, 131075, 720910, 0, 65536, 720921, 0, 65536, 851949, 0, 65536, 786446, 0, 65536, 786457, 0, 65536, 917485, 0, 65536, 851982, 0, 65537, 851983, 0, 196610, 851984, 0, 196610, 851985, 0, 196611, 851988, 0, 196609, 851989, 0, 196610, 851990, 0, 196610, 851991, 0, 196610, 851992, 0, 196610, 851993, 0, 65539, 983021, 0, 65537, 983022, 0, 196610, 983023, 0, 196610, 983024, 0, 196610, 983025, 0, 196610, 983026, 0, 196610, 983027, 0, 196610, 983028, 0, 196610, 983029, 0, 196610, 983030, 0, 196610, 983031, 0, 196610, 983032, 0, 196610, 983033, 0, 196610, 983034, 0, 196610, 983035, 0, 196610, 983036, 0, 196610, 983037, 0, 196610, 983038, 0, 196610, 983039, 0, 196610, 917504, 0, 196610, 917505, 0, 196610, 917506, 0, 196610, 917507, 0, 196610, 917508, 0, 196610, 917509, 0, 196610, 917510, 0, 196610, 917511, 0, 196610, 917512, 0, 196611, 917515, 0, 196609, 917516, 0, 196610, 917517, 0, 196610, 917518, 0, 65539, 917529, 0, 65536, 1048557, 0, 65536, 983054, 0, 65536, 983065, 0, 65536, 1114093, 0, 65536, 1048590, 0, 65536, 1048601, 0, 65536, 1179629, 0, 65536, 1114126, 0, 65536, 1114137, 0, 65536, 1245165, 0, 65536, 1245174, 0, 196609, 1245175, 0, 196610, 1245176, 0, 196610, 1245177, 0, 196610, 1245178, 0, 196610, 1245179, 0, 196610, 1245180, 0, 196610, 1245181, 0, 196610, 1245182, 0, 196610, 1245183, 0, 196610, 1179648, 0, 196610, 1179649, 0, 196610, 1179650, 0, 196610, 1179651, 0, 196610, 1179652, 0, 196610, 1179653, 0, 196610, 1179654, 0, 196610, 1179655, 0, 196610, 1179656, 0, 196610, 1179657, 0, 196610, 1179658, 0, 196610, 1179659, 0, 196610, 1179660, 0, 196610, 1179661, 0, 196610, 1179662, 0, 131074, 1179663, 0, 196610, 1179664, 0, 196610, 1179665, 0, 196610, 1179666, 0, 196610, 1179667, 0, 196610, 1179668, 0, 196611, 1179673, 0, 65536, 1310701, 0, 65536, 1245209, 0, 65536, 1376237, 0, 65536, 1310745, 0, 65536, 1441773, 0, 131073, 1441774, 0, 196610, 1441775, 0, 196610, 1441776, 0, 196610, 1441777, 0, 196610, 1441778, 0, 196610, 1441779, 0, 196610, 1441780, 0, 196610, 1441781, 0, 196610, 1441782, 0, 196610, 1441783, 0, 196610, 1441784, 0, 196610, 1441785, 0, 196610, 1441786, 0, 196610, 1441787, 0, 196610, 1441788, 0, 196610, 1441789, 0, 196610, 1441790, 0, 196610, 1441791, 0, 196610, 1376256, 0, 196610, 1376257, 0, 196610, 1376258, 0, 196610, 1376259, 0, 196610, 1376260, 0, 196610, 1376261, 0, 196610, 1376262, 0, 196610, 1376263, 0, 196610, 1376264, 0, 196610, 1376265, 0, 196610, 1376266, 0, 196610, 1376267, 0, 196610, 1376268, 0, 196610, 1376269, 0, 196610, 1376270, 0, 196610, 1376271, 0, 196610, 1376272, 0, 196610, 1376273, 0, 196610, 1376274, 0, 196610, 1376275, 0, 196610, 1376276, 0, 196610, 1376277, 0, 196610, 1376278, 0, 196610, 1376279, 0, 196610, 1376280, 0, 196610, 1376281, 0, 131075 )
 
+[node name="Misc" type="Node2D" parent="."]
+
+[node name="RedRug" type="Sprite" parent="Misc"]
+position = Vector2( 200, 552 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 49, 356, 30, 24 )
+
+[node name="GreenRug" type="Sprite" parent="Misc"]
+position = Vector2( -144, 296 )
+rotation = 1.5708
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 97, 388, 30, 24 )
+
+[node name="BrownRug" type="Sprite" parent="Misc"]
+position = Vector2( 328, 520 )
+rotation = 3.14159
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 4, 707, 41, 26 )
+
+[node name="PurpleRug" type="Sprite" parent="Misc"]
+position = Vector2( 180, 256 )
+rotation = 3.14159
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 197, 340, 54, 56 )
+
+[node name="Basket" type="Sprite" parent="Misc"]
+position = Vector2( 55, 194.5 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 113, 49, 14, 13 )
+
+[node name="Basket2" type="Sprite" parent="Misc"]
+position = Vector2( 73, 198.5 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 113, 49, 14, 13 )
+
+[node name="Sign" type="Sprite" parent="Misc"]
+position = Vector2( -184, 244 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 146, 44, 12, 9 )
+
+[node name="Stool" type="Sprite" parent="Misc"]
+position = Vector2( 206.5, 222.5 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Stool3" type="Sprite" parent="Misc"]
+position = Vector2( 202.5, 258.5 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Stool2" type="Sprite" parent="Misc"]
+position = Vector2( 212, 556 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 33, 284, 13, 13 )
+
+[node name="Table" type="Sprite" parent="Misc"]
+position = Vector2( 188, 240 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 221, 529, 22, 21 )
+
+[node name="Window5" type="Sprite" parent="Misc"]
+position = Vector2( 108, 180 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Window6" type="Sprite" parent="Misc"]
+position = Vector2( -40, 180 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Window7" type="Sprite" parent="Misc"]
+position = Vector2( -240, 180 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 131, 695, 25, 20 )
+
+[node name="Arrow" type="Sprite" parent="Misc"]
+position = Vector2( -76, 372 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 178, 44, 12, 9 )
+
+[node name="Arrow2" type="Sprite" parent="Misc"]
+position = Vector2( -36, 596 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 178, 44, 12, 9 )
+
+[node name="Arrow3" type="Sprite" parent="Misc"]
+position = Vector2( -112, 468 )
+texture = ExtResource( 11 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 178, 44, 12, 9 )
+
+[node name="Hangers" type="Sprite" parent="Misc"]
+position = Vector2( 242, -11 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 779, 15, 15 )
+
+[node name="Tools" type="Sprite" parent="Misc"]
+position = Vector2( 172, 204 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 33, 876, 29, 21 )
+
+[node name="Plant" type="Sprite" parent="Misc"]
+position = Vector2( 384, 188 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 214, 456, 20, 33 )
+
+[node name="Plant2" type="Sprite" parent="Misc"]
+position = Vector2( 252, 188 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 214, 456, 20, 33 )
+
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "navigation",
 ]]
@@ -396,7 +528,7 @@ region_rect = Rect2( 83, 151, 25, 20 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 320, 200 )
 frames = SubResource( 45 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="LevelExit" type="Area2D" parent="AnimatedSprite"]
